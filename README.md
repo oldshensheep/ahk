@@ -1,4 +1,4 @@
-# ahk
+# AHK
 
 my autohotkey scripts
 
