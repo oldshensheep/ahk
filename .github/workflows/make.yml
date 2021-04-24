@@ -6,3 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: powershell file4make/make.ps1
+      - uses: actions/upload-artifact@v2.2.3
+        with:
+          name: Compliled ahk
+          path: out
+          retention-days: 90
