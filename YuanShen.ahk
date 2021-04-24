@@ -45,7 +45,7 @@ if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
 }
 
 ; 刻晴一键飞天
-r:: {
+~r:: {
     if (WinActive("ahk_exe YuanShen.exe")) {
         Send("{Alt down}")
         Click "1817 832"
