@@ -55,9 +55,7 @@ XButton1::^v
 }
 
 >!Numpad0:: {
-    if (ProcessExist("AIMP.exe")) {
-        lt := ProcessExist("AIMP.exe")
-    }
+    lt := ProcessExist("AIMP.exe")
     MinMax := WinGetMinMax(lt)
     if (MinMax = -1) {
         WinRestore(lt)
