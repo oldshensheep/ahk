@@ -21,46 +21,36 @@ XButton1::^v
     SetTimer(() => ToolTip(), -500)
 }
 
-; RCTRL+Down 窗口最小化 / 还原
+; RCTRL+Down Min/Restore Windows
 >^Down:: {
-    static lt := ""	;存储上次最小化的窗口
-    if (lt = "") {
-        lt := WinExist("A")
+    static lastMinWin := ""
+    if (lastMinWin = "") {
+        lastMinWin := WinExist("A")
     }
-    MinMax := WinGetMinMax(lt)
+    MinMax := WinGetMinMax(lastMinWin)
     if (MinMax = -1) {
-        WinRestore(lt)
-        WinActivate(lt)
-        lt := ""
+        WinRestore(lastMinWin)
+        WinActivate(lastMinWin)
+        lastMinWin := ""
     } else {
-        WinMinimize(lt)
+        WinMinimize(lastMinWin)
     }
 }
 
-; RCTRL+RALT+Up设置窗口透明度
+; RCTRL+RALT+Up Set Windows Transparent
 >^>!Up:: {
     Transparent := WinGetTransparent("A")
     if (Transparent = "") {
-        WinSetTransparent(200, "A")
+        WinSetTransparent(225, "A")
     } else {
         WinSetTransparent(255, "A")
         WinSetTransparent("off", "A")
     }
 }
-; RCTRL+0 切换暗黑模式
+
+; RCTRL+0 Switch Black/White Theme
 >^0:: {
     static ThemePath := "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize"
     TestValue := RegRead(ThemePath, "AppsUseLightTheme")
     RegWrite(!TestValue, "REG_DWORD", ThemePath, "AppsUseLightTheme")
-}
-
->!Numpad0:: {
-    lt := ProcessExist("AIMP.exe")
-    MinMax := WinGetMinMax(lt)
-    if (MinMax = -1) {
-        WinRestore(lt)
-        WinActivate(lt)
-    } else {
-        WinMinimize(lt)
-    }
 }
