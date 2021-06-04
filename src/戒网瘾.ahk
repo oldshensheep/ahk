@@ -16,7 +16,7 @@ if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
 
 exeName := "csgo.exe"
 we := "ahk_exe " . (exeName)
-sleepTime := 3000
+sleepTime := 3000000
 
 loop {
     Sleep(300)
