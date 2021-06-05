@@ -54,3 +54,9 @@ XButton1::^v
     TestValue := RegRead(ThemePath, "AppsUseLightTheme")
     RegWrite(!TestValue, "REG_DWORD", ThemePath, "AppsUseLightTheme")
 }
+
+; LCTRL+LALT+Numpad0 restart explorer
+<^<!Numpad0:: {
+    RunWait "taskkill /f /IM explorer.exe"
+    RunWait "C:\Windows\explorer.exe"
+}
