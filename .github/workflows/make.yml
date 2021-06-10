@@ -8,6 +8,6 @@ jobs:
       - run: powershell file4make/make.ps1
       - uses: actions/upload-artifact@v2.2.3
         with:
-          name: Compliled ahk
+          name: Compile ahk
           path: out
           retention-days: 90

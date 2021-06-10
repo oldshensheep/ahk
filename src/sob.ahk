@@ -6,7 +6,7 @@ if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
 {
     try
     {
-        if A_IsCompiled
+        if not A_IsCompiled	;BUG a136 bug
             Run '*RunAs "' A_ScriptFullPath '" /restart'
         else
             Run '*RunAs "' A_AhkPath '" /restart "' A_ScriptFullPath '"'
@@ -16,5 +16,5 @@ if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
 
 StartUpList := FileOpen("sob.txt", "r")
 While (StartUpList.AtEOF = 0)
-    Run('*RunAs "D:\Portable\install\AutoHotkey\AutoHotkeyU64.exe"' StartUpList.ReadLine())
+    Run '*RunAs "' A_AhkPath '" "' StartUpList.ReadLine() '"'
 StartUpList.Close()

@@ -48,7 +48,7 @@ XButton1::^v
     }
 }
 
-; RCTRL+0 Switch Black/White Theme
+; RCTRL+0 Switch Black/White Theme for Windows 10 System
 >^0:: {
     static ThemePath := "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize"
     TestValue := RegRead(ThemePath, "AppsUseLightTheme")
