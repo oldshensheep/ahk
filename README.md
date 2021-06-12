@@ -15,4 +15,4 @@ You can download exe from [Actions](https://github.com/oldshensheep/ahk/actions)
 
 Used for AutoHotKey2
 
-you can download AutoHotKey2 there <https://www.autohotkey.com/>
+you can download AutoHotKey2 here <https://www.autohotkey.com/>

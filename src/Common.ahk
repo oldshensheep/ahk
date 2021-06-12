@@ -4,16 +4,6 @@
 ; #Win ^Ctrl +Shift !Alt
 ; <左侧按键 >右侧按键 放在左侧
 
-; RALT+Left 上一首
->!Left::Media_Prev
-
-; RALT+Right 下一首
->!Right::Media_Next
-
-; CV攻城狮 分别对应鼠标左边的上下按键
-XButton2::^c
-XButton1::^v
-
 ; RCTRL+Up 取反窗口置顶状态
 >^Up:: {
     WinSetAlwaysOnTop(-1, "A")
@@ -53,6 +43,16 @@ XButton1::^v
     static ThemePath := "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize"
     TestValue := RegRead(ThemePath, "AppsUseLightTheme")
     RegWrite(!TestValue, "REG_DWORD", ThemePath, "AppsUseLightTheme")
+}
+
+; RCTRL+9 Disable Absolute Volume in Windows 10 bluetooth stack. You need to restart your PC for changes to take affect
+>^9:: {
+    static RegPath := "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Bluetooth\Audio\AVRCP\CT"
+    TestValue := RegRead(RegPath, "DisableAbsoluteVolume")
+    RegWrite(!TestValue, "REG_DWORD", RegPath, "DisableAbsoluteVolume")
+    TestValue := !TestValue
+    ToolTip('Set DisableAbsoluteVolume to "' TestValue '"')
+    SetTimer(() => ToolTip(), -2500)
 }
 
 ; LCTRL+LALT+Numpad0 restart explorer
