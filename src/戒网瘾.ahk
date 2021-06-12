@@ -1,6 +1,6 @@
 #SingleInstance Force
 
-#Include "lib/requestAdmin.ahk"
+#Include lib/requestAdmin.ahk
 
 exeName := "csgo.exe"
 we := "ahk_exe " . (exeName)

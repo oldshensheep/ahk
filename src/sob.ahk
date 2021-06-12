@@ -1,6 +1,6 @@
 #SingleInstance Force
 
-#Include "lib/requestAdmin.ahk"
+#Include lib/requestAdmin.ahk
 
 StartUpList := FileOpen("sob.txt", "r")
 While (StartUpList.AtEOF = 0)

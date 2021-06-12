@@ -2,7 +2,7 @@
 #MaxThreadsPerHotkey 3
 CoordMode "Mouse", "Screen"
 
-#Include "lib/requestAdmin.ahk"
+#Include lib/requestAdmin.ahk
 
 ; 自动弹琴
 ; s2fMap:=Map("1","a","2","s","3","d","4","f","5","g","6","h","7","j"," "," ")
