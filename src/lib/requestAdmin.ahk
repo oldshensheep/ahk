@@ -4,7 +4,7 @@ if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
 {
     try
     {
-        if not A_IsCompiled	;BUG a136 bug
+        if A_IsCompiled
             Run '*RunAs "' A_ScriptFullPath '" /restart'
         else
             Run '*RunAs "' A_AhkPath '" /restart "' A_ScriptFullPath '"'
