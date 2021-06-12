@@ -2,19 +2,8 @@
 #MaxThreadsPerHotkey 3
 CoordMode "Mouse", "Screen"
 
-full_command_line := DllCall("GetCommandLine", "str")
+#Include "lib/requestAdmin.ahk"
 
-if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
-{
-    try
-    {
-        if A_IsCompiled
-            Run '*RunAs "' A_ScriptFullPath '" /restart'
-        else
-            Run '*RunAs "' A_AhkPath '" /restart "' A_ScriptFullPath '"'
-    }
-    ExitApp
-}
 ; 自动弹琴
 ; s2fMap:=Map("1","a","2","s","3","d","4","f","5","g","6","h","7","j"," "," ")
 ; sd:=StrSplit("334554321123322 334554321123211 2231") 欢乐颂
