@@ -10,3 +10,7 @@
 {
     SendInput FormatTime()
 }
+:*:/paste::
+{
+    SendText A_Clipboard
+}
