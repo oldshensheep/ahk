@@ -11,3 +11,12 @@
 ; CV攻城狮 分别对应鼠标左边的上下按键
 XButton2::^c
 XButton1::^v
+; Vim ?
++!h::Left
++!j::Up
++!k::Down
++!l::Right
+
+; fuck the keyboard
+!b::g
+!s::q
