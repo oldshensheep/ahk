@@ -11,6 +11,7 @@
     SetTimer(() => ToolTip(), -500)
 }
 
+; Win11 已经有这个功能了 按 WIN + 上下左右 可以变换窗口
 ; RCTRL+Down Min/Restore Windows
 >^Down:: {
     static lastMinWin := ""
