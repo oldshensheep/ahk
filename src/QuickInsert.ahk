@@ -1,4 +1,5 @@
-#SingleInstance Force
+#Include lib/default.ahk
+#Include lib/requestAdmin.ahk
 
 ; https://wyagd001.github.io/v2/docs/Hotstrings.htm
 ; Hotstring EndChars -()[]{}:;'"/\,.?!`n `t

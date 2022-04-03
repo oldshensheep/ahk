@@ -1,5 +1,4 @@
-#SingleInstance Force
-
+#Include lib/default.ahk
 #Include lib/requestAdmin.ahk
 
 exeName := "csgo.exe"

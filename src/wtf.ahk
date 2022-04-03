@@ -1,7 +1,6 @@
-#SingleInstance Force
-CoordMode "Mouse"
-
+#Include lib/default.ahk
 #Include lib/requestAdmin.ahk
+CoordMode "Mouse"
 
 ^!0::ExitApp
 ^!9:: Pause - 1

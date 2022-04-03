@@ -4,12 +4,14 @@ You can download exe from [Actions](https://github.com/oldshensheep/ahk/actions)
 
 ## Function
 
-| File Name    | Function                                     |
-| ------------ | -------------------------------------------- |
-| Common.ahk   | Common shortcut key                          |
-| YuanShen.ahk | 原神相关的自动程序。自动弹琴，刻晴一键飞天。 |
-| sob.ahk      | Start on Boot                                |
-| wtf.ahk      | What F\*ck of my cursor                      |
+| File Name       | Function                                                         |
+| --------------- | ---------------------------------------------------------------- |
+| Common.ahk      | Common shortcut key                                              |
+| QuickInsert.ahk | Quickly input something. input /date output 16:03 2022年4月3     |
+| Remap.ahk       | Remap a key                                                      |
+| sob.ahk         | Start on Boot                                                    |
+| wtf.ahk         | What F\*ck of my cursor                                          |
+| YuanShen.ahk    | 原神相关的自动程序。自动弹琴，刻晴一键飞天（应该已经没有用了）。 |
 
 ## Notice
 
