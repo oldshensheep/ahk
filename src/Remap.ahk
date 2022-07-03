@@ -19,10 +19,10 @@ XButton2::
     if (ThisHotkey = A_PriorHotkey){
         if (A_TimeSincePriorHotkey < 250){ 
             Send "#b"
+            return
         }
-    }else{
-        Send "^c"
     }
+    Send "^c"
 }
 ; 鼠标下侧键::^c
 XButton1::^v
