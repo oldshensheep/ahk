@@ -2,7 +2,7 @@
 #Include lib/requestAdmin.ahk
 CoordMode "Mouse"
 
-^!0::ExitApp
+^!0:: ExitApp
 ^!9:: Pause - 1
 
 k := SysGet(78)
