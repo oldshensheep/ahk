@@ -1,5 +1,6 @@
 #Include lib/default.ahk
 #Include lib/requestAdmin.ahk
+#Include lib/CommonLib.ahk
 
 ; https://wyagd001.github.io/v2/docs/KeyList.htm
 ; #Win ^Ctrl +Shift !Alt
@@ -49,10 +50,9 @@
 
 ; RCTRL+9 Disable Absolute Volume in Windows 10 bluetooth stack. You need to restart your PC for changes to take affect
 >^9:: {
-    static RegPath := "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Bluetooth\Audio\AVRCP\CT"
-    TestValue := RegRead(RegPath, "DisableAbsoluteVolume")
-    RegWrite(!TestValue, "REG_DWORD", RegPath, "DisableAbsoluteVolume")
-    TestValue := !TestValue
+    KEY := "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Bluetooth\Audio\AVRCP\CT"
+    VALUE := "DisableAbsoluteVolume"
+    TestValue := ToggleReg(KEY, VALUE)
     ToolTip('Set DisableAbsoluteVolume to "' TestValue '"')
     SetTimer(() => ToolTip(), -2500)
 }
@@ -62,3 +62,14 @@
     RunWait "taskkill /f /IM explorer.exe"
     RunWait "C:\Windows\explorer.exe"
 }
+
+ToggleProxy() {
+    KEY := "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+    VALUE := "ProxyEnable"
+    ProxyEnabled := ToggleReg(KEY, VALUE)
+    ToolTip(Format("Set {1} to {2}", VALUE, ProxyEnabled))
+    SetTimer(() => ToolTip(), -2500)
+}
+
+; Win + F1
+#F1:: ToggleProxy()
